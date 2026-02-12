@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Fiancé 💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #ffdee9, #ffc3a0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 1.9rem;
+    color: #b30059;
+    margin-bottom: 15px;
+    animation: fadeIn 1.5s ease;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #ff0066;
+}
+
+.bouquet {
+    font-size: 4.5rem;
+    animation: float 2s ease-in-out infinite;
+}
+
+.next-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #ff4d6d;
+}
+
+.flowers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.flower {
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.flower:active {
+    transform: scale(1.3);
+}
+
+.message-box {
+    margin-top: 20px;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.9);
+    padding: 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: none;
+    color: #b30059;
+    animation: fadeIn 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Screen 1 -->
+<div id="screen1">
+    <h1>
+        Will you be my Valentine,<br>
+        <span class="highlight">my fiancé</span>? 💖
+    </h1>
+    <div>
+        <span class="bouquet">💐</span>
+        <span class="next-btn" onclick="goNext()">➡️</span>
+    </div>
+</div>
+
+<!-- Screen 2 -->
+<div id="screen2" class="hidden">
+    <h1>Pick a flower, <span class="highlight">my fiancé</span> 🌸</h1>
+
+    <div class="flowers-grid">
+        <span class="flower" onclick="showMessage(0)">🌹</span>
+        <span class="flower" onclick="showMessage(1)">🌷</span>
+        <span class="flower" onclick="showMessage(2)">🌻</span>
+        <span class="flower" onclick="showMessage(3)">🌼</span>
+        <span class="flower" onclick="showMessage(4)">🌺</span>
+        <span class="flower" onclick="showMessage(5)">🌸</span>
+        <span class="flower" onclick="showMessage(6)">💮</span>
+        <span class="flower" onclick="showMessage(7)">🏵️</span>
+        <span class="flower" onclick="showMessage(8)">🪻</span>
+        <span class="flower" onclick="showMessage(9)">🥀</span>
+        <span class="flower" onclick="showMessage(10)">🌾</span>
+        <span class="flower" onclick="showMessage(11)">🌹</span>
+    </div>
+
+    <div class="message-box" id="messageBox"></div>
+</div>
+
+</div>
+
+<script>
+function goNext() {
+    document.getElementById("screen1").classList.add("hidden");
+    document.getElementById("screen2").classList.remove("hidden");
+}
+
+const messages = [
+    "You are my forever, my fiancé. 💍",
+    "My heart is yours. Always. 💖",
+    "I choose you. Every day. 🌹",
+    "You are my best decision. 🌷",
+    "Life is sweeter with you. 🌸",
+    "My favorite love story is ours. 💞",
+    "You are my answered prayer. 🌼",
+    "Home is wherever you are. 🏡",
+    "My today. My tomorrow. 🌺",
+    "You make my world brighter. ✨",
+    "Still falling for you. 💕",
+    "Be my Valentine, my fiancé? 💍💖"
+];
+
+function showMessage(index) {
+    const box = document.getElementById("messageBox");
+    box.innerText = messages[index];
+    box.style.display = "block";
+}
+</script>
+
+</body>
+</html>
